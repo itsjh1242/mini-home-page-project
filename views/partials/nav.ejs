@@ -1,6 +1,6 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Online Book Store</a>
+    <a class="navbar-brand" href="#">Mini HomePage</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,25 +16,12 @@
           </form>
         </ul>
   
-      <% if(session != null){ %>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"><%= session %> 님</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/mypage/main/<%= session %>"> My Page</a></li>
-          <li class="nav-item"><a class="nav-link" href="/cart/cartPage">Cart</a></li>
-          <li class="nav-item"><a class="nav-link" href="/order/orderListPage">Order History</a></li>
-          <li class="nav-item"><a href="/user/logout" class="nav-link">Logout</a></li>
-        </ul>
-  
-      <% } else { %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/user/signin">Login</a>
           </li>
           <li class="nav-item"><a href="/user/signup" class="nav-link">Signup</a></li>
         </ul>
-      <% } %>
   
     </div>
   </nav>
