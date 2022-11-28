@@ -10,6 +10,31 @@ var usersRouter = require("./src/routes/users");
 
 var app = express();
 
+// Session
+var session = require("express-session");
+var MySQLStore = require("express-mysql-session")(session);
+
+var options = {
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "011200",
+  database: "mini-hp",
+};
+// bookstore_exam
+// bookstore1
+var sessionStore = new MySQLStore(options);
+
+app.use(
+  session({
+    key: "session_cookie_name",
+    secret: "session_cookie_secret",
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
